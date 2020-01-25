@@ -86,7 +86,7 @@ def get_lags_for_frequency(
     # multiple, granularity = get_granularity(freq_str)
     offset = to_offset(freq_str)
 
-    if offset.name == "M":
+    if offset.name.startswith("M"):
         lags = _make_lags_for_month(offset.n)
     elif offset.name == "W-SUN":
         lags = _make_lags_for_week(offset.n)
